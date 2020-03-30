@@ -2,23 +2,45 @@
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  font-size: 18px;
 }
 
 button {
   padding: 10px;
   background: white;
-  border: 3px solid lightskyblue;
+  border: 2px solid lightskyblue;
   border-radius: 3px;
   cursor: pointer;
-  font-size: 18px;
 }
 
 select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 10px;
   background: white;
-  border: 3px solid lightskyblue;
+  border: 2px solid lightskyblue;
   border-radius: 3px;
   cursor: pointer;
-  font-size: 18px;
+  text-align-last: center;
+}
+
+p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  background: white;
+  border: 2px solid lightskyblue;
+  border-radius: 3px;
 }
 /*# sourceMappingURL=index.css.map */

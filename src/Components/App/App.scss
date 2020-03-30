@@ -3,19 +3,24 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .app-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 85%;
-  height: 100%;
+  width: 82%;
 }
 
-.board-container {
+.box {
+  position: relative;
+  width: 100%;
+  &:after {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.board {
+  position: absolute;
   border: 3px solid lightskyblue;
   border-radius: 7px;
   display: grid;
@@ -23,34 +28,43 @@
   column-gap: 3px;
   padding: 3px;
   background: lightskyblue;
-  margin: 40px 0 40px 0;
-  // width: 85%;
-  // height: 65%;
-  // &:after {
-  //   content: "";
-  //   display: block;
-  //   padding-top: 100%;
-  // }
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
 }
 
-.four-by-four-board {
+.board__four-by-four {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
 }
 
-.five-by-five-board {
+.board__five-by-five {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
 }
 
-.six-by-six-board {
+.board__six-by-six {
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
 }
 
-.game-options {
-  display: flex;
-  justify-content: space-around;
+.options {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 3px;
   align-items: center;
-  width: 80%;
+  margin-top: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .app-container {
+    width: 55%;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  .app-container {
+    width: 35%;
+  }
 }

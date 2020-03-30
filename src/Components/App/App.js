@@ -5,14 +5,17 @@ import Dice from "../Dice/Dice";
 import Timer from "../Timer/Timer";
 
 function App() {
-  const [gameBoard, setGameBoard] = useState([]);
-  const [timer, setTimer] = useState("00:00");
+  const [board, setBoard] = useState([]);
+  const [timer, setTimer] = useState("03:00");
+  const [timerStart, setTimerStart] = useState("03:00");
+  const [playing, setPlaying] = useState(false);
+  const [intervalId, setIntervalId] = useState();
 
   useEffect(() => {
-    setGameBoard(createNewBoard(diceBag.fourByFOurDice));
+    setBoard(newBoard(diceBag.fourByFOurDice));
   }, []);
 
-  const createNewBoard = dice => {
+  const newBoard = dice => {
     const emptyBoard = Array.from(
       { length: dice.length },
       () => Math.floor(Math.random() * 5) // this ignores the u on the 'Qu' cube
@@ -33,27 +36,27 @@ function App() {
   };
 
   const resetBoard = () => {
-    gameBoard.length === 16
-      ? setGameBoard(createNewBoard(diceBag.fourByFOurDice))
-      : gameBoard.length === 25
-      ? setGameBoard(createNewBoard(diceBag.fiveByFiveDice))
-      : setGameBoard(createNewBoard(diceBag.sixBySixDice));
+    board.length === 16
+      ? setBoard(newBoard(diceBag.fourByFOurDice))
+      : board.length === 25
+      ? setBoard(newBoard(diceBag.fiveByFiveDice))
+      : setBoard(newBoard(diceBag.sixBySixDice));
   };
 
   const changeBoardSize = e => {
     let boardSize = e.target.value;
     switch (boardSize) {
       case "fourByFOurDice":
-        setGameBoard(createNewBoard(diceBag.fourByFOurDice));
+        setBoard(newBoard(diceBag.fourByFOurDice));
         break;
       case "fiveByFiveDice":
-        setGameBoard(createNewBoard(diceBag.fiveByFiveDice));
+        setBoard(newBoard(diceBag.fiveByFiveDice));
         break;
       case "sixBySixDice":
-        setGameBoard(createNewBoard(diceBag.sixBySixDice));
+        setBoard(newBoard(diceBag.sixBySixDice));
         break;
       default:
-        setGameBoard(createNewBoard(diceBag.fourByFOurDice));
+        setBoard(newBoard(diceBag.fourByFOurDice));
         break;
     }
   };
@@ -61,27 +64,39 @@ function App() {
   return (
     <div className="App">
       <div className="app-container">
-        <Timer timerTime={timer} setTimer={setTimer}></Timer>
-        <div
-          className={
-            gameBoard.length === 16
-              ? "board-container four-by-four-board"
-              : gameBoard.length === 25
-              ? "board-container five-by-five-board"
-              : "board-container six-by-six-board"
-          }
-        >
-          {gameBoard.map((value, index) => (
-            <Dice key={index} value={value}></Dice>
-          ))}
-        </div>
-        <div className="game-options">
+        <Timer
+          timer={timer}
+          setTimer={setTimer}
+          timerStart={timerStart}
+          setTimerStart={setTimerStart}
+          playing={playing}
+          setPlaying={setPlaying}
+          intervalId={intervalId}
+          setIntervalId={setIntervalId}
+        ></Timer>
+        <div className="options">
           <button onClick={resetBoard}>Shuffle</button>
+          <div></div>
           <select name="board-size-selection" onChange={changeBoardSize}>
             <option value="fourByFOurDice">4x4</option>
             <option value="fiveByFiveDice">5x5</option>
             <option value="sixBySixDice">6x6</option>
           </select>
+        </div>
+        <div className="box">
+          <div
+            className={
+              board.length === 16
+                ? "board board__four-by-four"
+                : board.length === 25
+                ? "board board__five-by-five"
+                : "board board__six-by-six"
+            }
+          >
+            {board.map((value, index) => (
+              <Dice key={index} value={value}></Dice>
+            ))}
+          </div>
         </div>
       </div>
     </div>

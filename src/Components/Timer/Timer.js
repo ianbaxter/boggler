@@ -1,27 +1,65 @@
 import React from "react";
 import "./Timer.css";
 
-const Timer = ({ timerTime, setTimer }) => {
+const Timer = ({
+  timer,
+  setTimer,
+  timerStart,
+  setTimerStart,
+  playing,
+  setPlaying,
+  intervalId,
+  setIntervalId
+}) => {
   const setTimerTo = e => {
     let newTimer = e.target.value;
     setTimer(newTimer);
+    setTimerStart(newTimer);
   };
 
   const startCountdown = () => {
-    console.log("started");
+    if (!playing) {
+      setPlaying(true);
+      let seconds = timer.split(":")[0] * 60 + timer.split(":")[1] * 1;
+      let newIntervalId = setInterval(() => {
+        if (seconds > 0) {
+          seconds--;
+          let newTimer =
+            "0" +
+            Math.floor(seconds / 60) +
+            ":" +
+            (seconds % 60 > 9 ? seconds % 60 : "0" + (seconds % 60));
+          setTimer(newTimer);
+        } else {
+          clearInterval(intervalId);
+        }
+      }, 1000);
+      setIntervalId(newIntervalId);
+    } else if (playing) {
+      setPlaying(false);
+      clearInterval(intervalId);
+      setTimer(timerStart);
+    }
   };
 
   return (
     <div className="timer-container">
-      <button onClick={startCountdown}>Start</button>
-      <p>Timer: {timerTime}</p>
-      <select onChange={setTimerTo}>
-        <option vlaue="60">01:00</option>
-        <option vlaue="90">01:30</option>
-        <option vlaue="120">02:00</option>
-        <option vlaue="180">03:00</option>
-        <option vlaue="240">04:00</option>
-      </select>
+      <button onClick={startCountdown}>{playing ? "Reset" : "Start"}</button>
+      <div></div>
+      {playing ? (
+        <p>
+          <b>{timer}</b>
+        </p>
+      ) : (
+        <select onChange={setTimerTo} defaultValue="03:00">
+          <option vlaue="60">01:00</option>
+          <option vlaue="90">01:30</option>
+          <option vlaue="120">02:00</option>
+          <option vlaue="180">03:00</option>
+          <option vlaue="240">04:00</option>
+          <option vlaue="300">05:00</option>
+        </select>
+      )}
     </div>
   );
 };
