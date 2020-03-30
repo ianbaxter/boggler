@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/boggler/static/css/main.18efe4be.chunk.css",
+    "main.js": "/boggler/static/js/main.8747c9dd.chunk.js",
+    "main.js.map": "/boggler/static/js/main.8747c9dd.chunk.js.map",
+    "runtime-main.js": "/boggler/static/js/runtime-main.f9b69a58.js",
+    "runtime-main.js.map": "/boggler/static/js/runtime-main.f9b69a58.js.map",
+    "static/js/2.bc4eb2f2.chunk.js": "/boggler/static/js/2.bc4eb2f2.chunk.js",
+    "static/js/2.bc4eb2f2.chunk.js.map": "/boggler/static/js/2.bc4eb2f2.chunk.js.map",
+    "index.html": "/boggler/index.html",
+    "precache-manifest.58f01d8f0fcca22275c543bbb3ac3966.js": "/boggler/precache-manifest.58f01d8f0fcca22275c543bbb3ac3966.js",
+    "service-worker.js": "/boggler/service-worker.js",
+    "static/css/main.18efe4be.chunk.css.map": "/boggler/static/css/main.18efe4be.chunk.css.map",
+    "static/js/2.bc4eb2f2.chunk.js.LICENSE.txt": "/boggler/static/js/2.bc4eb2f2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f9b69a58.js",
+    "static/js/2.bc4eb2f2.chunk.js",
+    "static/css/main.18efe4be.chunk.css",
+    "static/js/main.8747c9dd.chunk.js"
+  ]
+}
