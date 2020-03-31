@@ -9,5 +9,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 10px;
+}
+
+.countdown__time-up {
+  background: red;
+  color: white;
 }
 /*# sourceMappingURL=Timer.css.map */

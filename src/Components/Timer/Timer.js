@@ -9,7 +9,9 @@ const Timer = ({
   playing,
   setPlaying,
   intervalId,
-  setIntervalId
+  setIntervalId,
+  isTimeUp,
+  setIsTimeUp
 }) => {
   const setTimerTo = e => {
     let newTimer = e.target.value;
@@ -32,26 +34,31 @@ const Timer = ({
           setTimer(newTimer);
         } else {
           clearInterval(intervalId);
+          setIsTimeUp(true);
         }
-      }, 1000);
+      }, 10);
       setIntervalId(newIntervalId);
     } else if (playing) {
       setPlaying(false);
       clearInterval(intervalId);
       setTimer(timerStart);
+      if (isTimeUp) setIsTimeUp(false);
     }
   };
+
+  let countdownClassName = "counddown";
+  if (isTimeUp) countdownClassName += " countdown__time-up";
 
   return (
     <div className="timer-container">
       <button onClick={startCountdown}>{playing ? "Reset" : "Start"}</button>
       <div></div>
       {playing ? (
-        <p>
+        <p className={countdownClassName}>
           <b>{timer}</b>
         </p>
       ) : (
-        <select onChange={setTimerTo} defaultValue="03:00">
+        <select onChange={setTimerTo} defaultValue={timerStart}>
           <option vlaue="60">01:00</option>
           <option vlaue="90">01:30</option>
           <option vlaue="120">02:00</option>

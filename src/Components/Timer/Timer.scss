@@ -4,4 +4,10 @@
   grid-template-columns: repeat(3, 1fr);
   column-gap: 3px;
   align-items: center;
+  margin-top: 10px;
+}
+
+.countdown__time-up {
+  background: red;
+  color: white;
 }

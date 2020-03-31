@@ -10,6 +10,7 @@ function App() {
   const [timerStart, setTimerStart] = useState("03:00");
   const [playing, setPlaying] = useState(false);
   const [intervalId, setIntervalId] = useState();
+  const [isTimeUp, setIsTimeUp] = useState(false);
 
   useEffect(() => {
     setBoard(newBoard(diceBag.fourByFOurDice));
@@ -64,16 +65,6 @@ function App() {
   return (
     <div className="App">
       <div className="app-container">
-        <Timer
-          timer={timer}
-          setTimer={setTimer}
-          timerStart={timerStart}
-          setTimerStart={setTimerStart}
-          playing={playing}
-          setPlaying={setPlaying}
-          intervalId={intervalId}
-          setIntervalId={setIntervalId}
-        ></Timer>
         <div className="options">
           <button onClick={resetBoard}>Shuffle</button>
           <div></div>
@@ -83,6 +74,18 @@ function App() {
             <option value="sixBySixDice">6x6</option>
           </select>
         </div>
+        <Timer
+          timer={timer}
+          setTimer={setTimer}
+          timerStart={timerStart}
+          setTimerStart={setTimerStart}
+          playing={playing}
+          setPlaying={setPlaying}
+          intervalId={intervalId}
+          setIntervalId={setIntervalId}
+          isTimeUp={isTimeUp}
+          setIsTimeUp={setIsTimeUp}
+        ></Timer>
         <div className="box">
           <div
             className={
