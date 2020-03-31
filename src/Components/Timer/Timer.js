@@ -36,7 +36,7 @@ const Timer = ({
           clearInterval(intervalId);
           setIsTimeUp(true);
         }
-      }, 10);
+      }, 1000);
       setIntervalId(newIntervalId);
     } else if (playing) {
       setPlaying(false);
