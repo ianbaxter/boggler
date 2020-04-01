@@ -13,20 +13,19 @@ function App() {
   const [isTimeUp, setIsTimeUp] = useState(false);
 
   useEffect(() => {
-    setBoard(newBoard(diceBag.fourByFOurDice));
+    setBoard(newBoard(diceBag.fiveByFiveDice));
   }, []);
 
   const newBoard = dice => {
-    const emptyBoard = Array.from(
-      { length: dice.length },
-      () => Math.floor(Math.random() * 5) // this ignores the u on the 'Qu' cube
+    const emptyBoard = Array.from({ length: dice.length }, () =>
+      Math.floor(Math.random() * 6)
     );
 
-    const board = emptyBoard.map((value, idx) => dice[idx].charAt(value));
+    const board = emptyBoard.map((value, idx) => dice[idx][value]);
 
-    shuffleArray(board);
+    shakeDice(board);
 
-    function shuffleArray(array) {
+    function shakeDice(array) {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
@@ -57,7 +56,7 @@ function App() {
         setBoard(newBoard(diceBag.sixBySixDice));
         break;
       default:
-        setBoard(newBoard(diceBag.fourByFOurDice));
+        setBoard(newBoard(diceBag.fiveByFiveDice));
         break;
     }
   };
@@ -68,7 +67,11 @@ function App() {
         <div className="options">
           <button onClick={resetBoard}>Shuffle</button>
           <div></div>
-          <select name="board-size-selection" onChange={changeBoardSize}>
+          <select
+            name="board-size-selection"
+            onChange={changeBoardSize}
+            defaultValue="fiveByFiveDice"
+          >
             <option value="fourByFOurDice">4x4</option>
             <option value="fiveByFiveDice">5x5</option>
             <option value="sixBySixDice">6x6</option>

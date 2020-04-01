@@ -14,7 +14,7 @@ const diceBag = {
     "EHRTVW",
     "EIOSST",
     "ELRTTY",
-    "HIMNUQu",
+    ["H", "I", "M", "N", "U", "Qu"],
     "HLNNRZ"
   ],
   fiveByFiveDice: [
@@ -38,7 +38,7 @@ const diceBag = {
     "EILPST",
     "EMOTTT",
     "ENSSSU",
-    "FIPRSY", // Alternate cube is: Qu-In-Th-Er-He-An
+    ["Qu", "In", "Th", "Er", "He", "An"], // Alternate cube is: FIPRSY
     "GORRVW",
     "IPRSYY",
     "NOOTUW",
@@ -57,7 +57,7 @@ const diceBag = {
     "AEILMN",
     "AEINOU",
     "AFIRSY",
-    "AEHIQT", // Should be 'AnErHeInQuTh'
+    ["An", "Er", "He", "In", "Qu", "Th"],
     "BBJKXZ",
     "CCENST",
     "CDDLNN",
@@ -78,7 +78,7 @@ const diceBag = {
     "HIRSTV",
     "HOPRST",
     "IPRSYY",
-    "JKQuWXZ",
+    ["J", "K", "Qu", "W", "X", "Z"],
     "NOOTUW",
     "OOOTTU"
   ]
