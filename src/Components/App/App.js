@@ -6,14 +6,14 @@ import Timer from "../Timer/Timer";
 
 function App() {
   const [board, setBoard] = useState([]);
-  const [timer, setTimer] = useState("03:00");
-  const [timerStart, setTimerStart] = useState("03:00");
+  const [timer, setTimer] = useState("04:00");
+  const [timerStart, setTimerStart] = useState("04:00");
   const [playing, setPlaying] = useState(false);
   const [intervalId, setIntervalId] = useState();
   const [isTimeUp, setIsTimeUp] = useState(false);
 
   useEffect(() => {
-    setBoard(newBoard(diceBag.fiveByFiveDice));
+    setBoard(newBoard(diceBag.sixBySixDice));
   }, []);
 
   const newBoard = dice => {
@@ -61,16 +61,51 @@ function App() {
     }
   };
 
+  const pasteBoard = e => {
+    e.preventDefault();
+    const codedBoard = e.target.userInput.value.split(/(?=[A-Z#])/);
+    const decodedBoard = codedBoard.map(value => {
+      if (value === "#" || value.length === 2) {
+        return value;
+      } else if (value === "A") return "Z";
+      return String.fromCharCode(value.charCodeAt(0) - 1);
+    });
+    if (decodedBoard.length === board.length) setBoard(decodedBoard);
+  };
+
+  const copyBoard = e => {
+    let secretBoard = board.map(value => {
+      if (value === "#" || value.length === 2) {
+        return value;
+      } else if (value === "Z") return "A";
+      return String.fromCharCode(value.charCodeAt(0) + 1);
+    });
+    let copyText = secretBoard.join("");
+    let tempElement = document.createElement("textarea");
+    document.body.appendChild(tempElement);
+    tempElement.value = copyText;
+    tempElement.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempElement);
+  };
+
   return (
     <div className="App">
       <div className="app-container">
         <div className="options">
           <button onClick={resetBoard}>Shuffle</button>
-          <div></div>
+          <button onClick={copyBoard}>Copy</button>
+          <form onSubmit={pasteBoard}>
+            <input
+              id="userInput"
+              type="textarea"
+              placeholder="Enter Code"
+            ></input>
+          </form>
           <select
             name="board-size-selection"
             onChange={changeBoardSize}
-            defaultValue="fiveByFiveDice"
+            defaultValue="sixBySixDice"
           >
             <option value="fourByFOurDice">4x4</option>
             <option value="fiveByFiveDice">5x5</option>

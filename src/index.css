@@ -13,6 +13,15 @@ button {
   cursor: pointer;
 }
 
+input[type="textarea"] {
+  font-size: 12px;
+  padding: 13px 10px 13px 10px;
+  background: white;
+  border: 2px solid lightskyblue;
+  border-radius: 3px;
+  width: 78%;
+}
+
 select {
   display: -webkit-box;
   display: -ms-flexbox;
