@@ -74,15 +74,42 @@
           align-items: center;
 }
 
+.dice-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid black;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 8vw;
+  -webkit-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
+  background: white;
+  grid-column: auto / span 1;
+  grid-row: auto / span 1;
+}
+
 @media only screen and (min-width: 768px) {
   .app-container {
     width: 55%;
+  }
+  .dice-container {
+    font-size: 2.8em;
   }
 }
 
 @media only screen and (min-width: 1050px) {
   .app-container {
     width: 35%;
+  }
+  .dice-container {
+    font-size: 3em;
   }
 }
 /*# sourceMappingURL=App.css.map */

@@ -1,19 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Timer.css";
 
-const Timer = ({
-  timer,
-  setTimer,
-  timerStart,
-  setTimerStart,
-  playing,
-  setPlaying,
-  intervalId,
-  setIntervalId,
-  isTimeUp,
-  setIsTimeUp
-}) => {
-  const setTimerTo = e => {
+const Timer = () => {
+  const [timer, setTimer] = useState("04:00");
+  const [timerStart, setTimerStart] = useState("04:00");
+  const [playing, setPlaying] = useState(false);
+  const [intervalId, setIntervalId] = useState();
+  const [isTimeUp, setIsTimeUp] = useState(false);
+
+  const setTimerTo = (e) => {
     let newTimer = e.target.value;
     setTimer(newTimer);
     setTimerStart(newTimer);
