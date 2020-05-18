@@ -81,7 +81,7 @@ function App() {
     <div className="App">
       <div className="app-container">
         <Timer />
-        <div className="box">
+        <div className="board-container">
           <div className={"board"}>
             {board.map((value, index) => (
               <div
@@ -99,7 +99,6 @@ function App() {
             ))}
           </div>
         </div>
-
         <div className="options">
           <div className="size">
             <button onClick={resetBoard}>Shuffle Board</button>
