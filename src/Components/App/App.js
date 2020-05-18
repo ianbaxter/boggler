@@ -108,18 +108,18 @@ function App() {
         </div>
         <Timer />
         <div className="box">
-          <div
-            className={
-              board.length === 16
-                ? "board board__four-by-four"
-                : board.length === 25
-                ? "board board__five-by-five"
-                : "board board__six-by-six"
-            }
-          >
+          <div className={"board"}>
             {board.map((value, index) => (
-              // <Dice  value={value}></Dice>
-              <div key={index} className="dice-container">
+              <div
+                key={index}
+                className={
+                  board.length === 16
+                    ? "dice dice__4x4"
+                    : board.length === 25
+                    ? "dice dice__5x5"
+                    : "dice dice__6x6"
+                }
+              >
                 {value}
               </div>
             ))}
