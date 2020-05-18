@@ -1,22 +1,16 @@
 import React, { useState, useEffect } from "react";
 import diceBag from "./diceBag";
 import "./App.css";
-import Dice from "../Dice/Dice";
 import Timer from "../Timer/Timer";
 
 function App() {
   const [board, setBoard] = useState([]);
-  const [timer, setTimer] = useState("04:00");
-  const [timerStart, setTimerStart] = useState("04:00");
-  const [playing, setPlaying] = useState(false);
-  const [intervalId, setIntervalId] = useState();
-  const [isTimeUp, setIsTimeUp] = useState(false);
 
   useEffect(() => {
     setBoard(newBoard(diceBag.sixBySixDice));
   }, []);
 
-  const newBoard = dice => {
+  const newBoard = (dice) => {
     const emptyBoard = Array.from({ length: dice.length }, () =>
       Math.floor(Math.random() * 6)
     );
@@ -43,7 +37,7 @@ function App() {
       : setBoard(newBoard(diceBag.sixBySixDice));
   };
 
-  const changeBoardSize = e => {
+  const changeBoardSize = (e) => {
     let boardSize = e.target.value;
     switch (boardSize) {
       case "fourByFOurDice":
@@ -61,10 +55,10 @@ function App() {
     }
   };
 
-  const pasteBoard = e => {
+  const pasteBoard = (e) => {
     e.preventDefault();
     const codedBoard = e.target.userInput.value.split(/(?=[A-Z#])/);
-    const decodedBoard = codedBoard.map(value => {
+    const decodedBoard = codedBoard.map((value) => {
       if (value === "#" || value.length === 2) {
         return value;
       } else if (value === "A") return "Z";
@@ -73,8 +67,8 @@ function App() {
     if (decodedBoard.length === board.length) setBoard(decodedBoard);
   };
 
-  const copyBoard = e => {
-    let secretBoard = board.map(value => {
+  const copyBoard = (e) => {
+    let secretBoard = board.map((value) => {
       if (value === "#" || value.length === 2) {
         return value;
       } else if (value === "Z") return "A";
@@ -112,30 +106,22 @@ function App() {
             <option value="sixBySixDice">6x6</option>
           </select>
         </div>
-        <Timer
-          timer={timer}
-          setTimer={setTimer}
-          timerStart={timerStart}
-          setTimerStart={setTimerStart}
-          playing={playing}
-          setPlaying={setPlaying}
-          intervalId={intervalId}
-          setIntervalId={setIntervalId}
-          isTimeUp={isTimeUp}
-          setIsTimeUp={setIsTimeUp}
-        ></Timer>
+        <Timer />
         <div className="box">
-          <div
-            className={
-              board.length === 16
-                ? "board board__four-by-four"
-                : board.length === 25
-                ? "board board__five-by-five"
-                : "board board__six-by-six"
-            }
-          >
+          <div className={"board"}>
             {board.map((value, index) => (
-              <Dice key={index} value={value}></Dice>
+              <div
+                key={index}
+                className={
+                  board.length === 16
+                    ? "dice dice__4x4"
+                    : board.length === 25
+                    ? "dice dice__5x5"
+                    : "dice dice__6x6"
+                }
+              >
+                {value}
+              </div>
             ))}
           </div>
         </div>
