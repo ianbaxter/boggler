@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/boggler/static/css/main.d0d690ae.chunk.css",
-    "main.js": "/boggler/static/js/main.6ac13d45.chunk.js",
-    "main.js.map": "/boggler/static/js/main.6ac13d45.chunk.js.map",
+    "main.css": "/boggler/static/css/main.ad20f9f1.chunk.css",
+    "main.js": "/boggler/static/js/main.0d0d91f1.chunk.js",
+    "main.js.map": "/boggler/static/js/main.0d0d91f1.chunk.js.map",
     "runtime-main.js": "/boggler/static/js/runtime-main.f9b69a58.js",
     "runtime-main.js.map": "/boggler/static/js/runtime-main.f9b69a58.js.map",
-    "static/js/2.bc4eb2f2.chunk.js": "/boggler/static/js/2.bc4eb2f2.chunk.js",
-    "static/js/2.bc4eb2f2.chunk.js.map": "/boggler/static/js/2.bc4eb2f2.chunk.js.map",
+    "static/js/2.81a2b972.chunk.js": "/boggler/static/js/2.81a2b972.chunk.js",
+    "static/js/2.81a2b972.chunk.js.map": "/boggler/static/js/2.81a2b972.chunk.js.map",
     "index.html": "/boggler/index.html",
-    "precache-manifest.c5b5f12d991394fbbea425c80acafb92.js": "/boggler/precache-manifest.c5b5f12d991394fbbea425c80acafb92.js",
+    "precache-manifest.49824d4c8e0221a0a13fb3cb65db59f7.js": "/boggler/precache-manifest.49824d4c8e0221a0a13fb3cb65db59f7.js",
     "service-worker.js": "/boggler/service-worker.js",
-    "static/css/main.d0d690ae.chunk.css.map": "/boggler/static/css/main.d0d690ae.chunk.css.map",
-    "static/js/2.bc4eb2f2.chunk.js.LICENSE.txt": "/boggler/static/js/2.bc4eb2f2.chunk.js.LICENSE.txt"
+    "static/css/main.ad20f9f1.chunk.css.map": "/boggler/static/css/main.ad20f9f1.chunk.css.map",
+    "static/js/2.81a2b972.chunk.js.LICENSE.txt": "/boggler/static/js/2.81a2b972.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f9b69a58.js",
-    "static/js/2.bc4eb2f2.chunk.js",
-    "static/css/main.d0d690ae.chunk.css",
-    "static/js/main.6ac13d45.chunk.js"
+    "static/js/2.81a2b972.chunk.js",
+    "static/css/main.ad20f9f1.chunk.css",
+    "static/js/main.0d0d91f1.chunk.js"
   ]
 }
