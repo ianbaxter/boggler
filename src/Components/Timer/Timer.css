@@ -4,12 +4,14 @@
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-  -webkit-column-gap: 3px;
-          column-gap: 3px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 10px;
+  margin-top: 5%;
+}
+
+.timer-container p {
+  border: 0;
 }
 
 .countdown__time-up {

@@ -6,7 +6,10 @@
 }
 
 .app-container {
-  width: 82%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .box {
@@ -20,6 +23,7 @@
 }
 
 .board {
+  box-sizing: border-box;
   position: absolute;
   border: 3px solid deepskyblue;
   border-radius: 7px;
@@ -33,10 +37,14 @@
 
 .options {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 3px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  margin-bottom: 5%;
+  .size {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .dice {
@@ -70,18 +78,53 @@
   margin: 0.5%;
 }
 
-@media only screen and (min-width: 768px) {
+button {
+  box-sizing: border-box;
+  background-color: deepskyblue;
+  color: white;
+  border-bottom: 1px solid slategray;
+  border-radius: 7px;
+}
+
+select {
+  box-sizing: border-box;
+  border: 0;
+  background-color: deepskyblue;
+  color: white;
+  border-bottom: 1px solid slategray;
+  border-radius: 7px;
+}
+
+@media only screen and (min-width: 600px) {
   .app-container {
-    width: 55%;
+    width: 70%;
   }
   .dice {
     font-size: 2.8em;
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .app-container {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 890px) {
+  .app-container {
+    width: 55%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .app-container {
+    width: 40%;
+  }
+}
+
 @media only screen and (min-width: 1050px) {
   .app-container {
-    width: 35%;
+    width: 34%;
   }
   .dice {
     font-size: 3em;

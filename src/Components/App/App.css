@@ -10,7 +10,17 @@
 }
 
 .app-container {
-  width: 82%;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .box {
@@ -25,6 +35,8 @@
 }
 
 .board {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: absolute;
   border: 3px solid deepskyblue;
   border-radius: 7px;
@@ -41,15 +53,22 @@
 
 .options {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: auto;
+  margin-bottom: 5%;
+}
+
+.options .size {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
-  -webkit-column-gap: 3px;
-          column-gap: 3px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
 }
 
 .dice {
@@ -91,18 +110,55 @@
   margin: 0.5%;
 }
 
-@media only screen and (min-width: 768px) {
+button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: deepskyblue;
+  color: white;
+  border-bottom: 1px solid slategray;
+  border-radius: 7px;
+}
+
+select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0;
+  background-color: deepskyblue;
+  color: white;
+  border-bottom: 1px solid slategray;
+  border-radius: 7px;
+}
+
+@media only screen and (min-width: 600px) {
   .app-container {
-    width: 55%;
+    width: 70%;
   }
   .dice {
     font-size: 2.8em;
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .app-container {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 890px) {
+  .app-container {
+    width: 55%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .app-container {
+    width: 40%;
+  }
+}
+
 @media only screen and (min-width: 1050px) {
   .app-container {
-    width: 35%;
+    width: 34%;
   }
   .dice {
     font-size: 3em;

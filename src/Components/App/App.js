@@ -55,10 +55,9 @@ function App() {
     }
   };
 
-  const pasteBoard = (e) => {
-    e.preventDefault();
-    const codedBoard = e.target.userInput.value.split(/(?=[A-Z#])/);
-    const decodedBoard = codedBoard.map((value) => {
+  const pasteBoard = async () => {
+    const codedBoard = await navigator.clipboard.readText();
+    const decodedBoard = codedBoard.split(/(?=[A-Z#])/).map((value) => {
       if (value === "#" || value.length === 2) {
         return value;
       } else if (value === "A") return "Z";
@@ -67,7 +66,7 @@ function App() {
     if (decodedBoard.length === board.length) setBoard(decodedBoard);
   };
 
-  const copyBoard = (e) => {
+  const copyBoard = () => {
     let secretBoard = board.map((value) => {
       if (value === "#" || value.length === 2) {
         return value;
@@ -75,37 +74,12 @@ function App() {
       return String.fromCharCode(value.charCodeAt(0) + 1);
     });
     let copyText = secretBoard.join("");
-    let tempElement = document.createElement("textarea");
-    document.body.appendChild(tempElement);
-    tempElement.value = copyText;
-    tempElement.select();
-    document.execCommand("copy");
-    document.body.removeChild(tempElement);
+    navigator.clipboard.writeText(copyText);
   };
 
   return (
     <div className="App">
       <div className="app-container">
-        <div className="options">
-          <button onClick={resetBoard}>Shuffle</button>
-          <button onClick={copyBoard}>Copy</button>
-          <form onSubmit={pasteBoard}>
-            <input
-              id="userInput"
-              type="textarea"
-              placeholder="Enter Code"
-            ></input>
-          </form>
-          <select
-            name="board-size-selection"
-            onChange={changeBoardSize}
-            defaultValue="sixBySixDice"
-          >
-            <option value="fourByFOurDice">4x4</option>
-            <option value="fiveByFiveDice">5x5</option>
-            <option value="sixBySixDice">6x6</option>
-          </select>
-        </div>
         <Timer />
         <div className="box">
           <div className={"board"}>
@@ -124,6 +98,23 @@ function App() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="options">
+          <div className="size">
+            <button onClick={resetBoard}>Shuffle Board</button>
+            <select
+              name="board-size-selection"
+              onChange={changeBoardSize}
+              defaultValue="sixBySixDice"
+            >
+              <option value="fourByFOurDice">4x4</option>
+              <option value="fiveByFiveDice">5x5</option>
+              <option value="sixBySixDice">6x6</option>
+            </select>
+          </div>
+          <button onClick={copyBoard}>Copy Board</button>
+          <button onClick={pasteBoard}>Enter Board</button>
         </div>
       </div>
     </div>
