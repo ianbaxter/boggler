@@ -8,14 +8,11 @@
       -ms-flex-align: center;
           align-items: center;
   margin-top: 2.5%;
-}
-
-.timer-container p {
-  border: 0;
+  color: var(--primary-color-dark);
 }
 
 .countdown__time-up {
-  background: red;
-  color: white;
+  background: var(--alert-color);
+  color: var(--button-text-color);
 }
 /*# sourceMappingURL=Timer.css.map */
