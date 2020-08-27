@@ -6,6 +6,8 @@ Generate 4x4, 5x5 and 6x6 size boards.
 
 [Game rules.](https://en.wikipedia.org/wiki/Boggle#Rules)
 
+This is a Progressive Web App (PWA) so if you install it, it can be used even when you are offline!
+
 ## Setup
 
 Clone the project:
