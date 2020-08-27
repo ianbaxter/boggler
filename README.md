@@ -1,6 +1,10 @@
 # Boggler
 
-A boggle board generator with 4x4, 5x5 and 6x6 board variations. Generate a board, set the timer and then write down as many words as you can find in the time limit.
+A boggle board generator made with React.
+
+Generate 4x4, 5x5 and 6x6 size boards. 
+
+[Game rules.](https://en.wikipedia.org/wiki/Boggle#Rules)
 
 ## Setup
 
