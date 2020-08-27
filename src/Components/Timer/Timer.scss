@@ -1,10 +1,15 @@
 .timer-container {
-  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  margin-top: 2.5%;
   color: var(--primary-color-dark);
+  align-items: center;
+}
+
+.counddown {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 7px;
 }
 
 .countdown__time-up {

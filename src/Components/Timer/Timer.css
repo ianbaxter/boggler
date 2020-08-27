@@ -1,14 +1,23 @@
 .timer-container {
-  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
+  color: var(--primary-color-dark);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 2.5%;
-  color: var(--primary-color-dark);
+}
+
+.counddown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  border-radius: 7px;
 }
 
 .countdown__time-up {

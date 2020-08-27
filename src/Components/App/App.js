@@ -5,6 +5,7 @@ import Timer from "../Timer/Timer";
 
 function App() {
   const [board, setBoard] = useState([]);
+  const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     setBoard(newBoard(diceBag.sixBySixDice));
@@ -14,9 +15,7 @@ function App() {
     const emptyBoard = Array.from({ length: dice.length }, () =>
       Math.floor(Math.random() * 6)
     );
-
     const board = emptyBoard.map((value, idx) => dice[idx][value]);
-
     shakeDice(board);
 
     function shakeDice(array) {
@@ -25,7 +24,6 @@ function App() {
         [array[i], array[j]] = [array[j], array[i]];
       }
     }
-
     return board;
   };
 
@@ -78,29 +76,28 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <main className="App">
       <div className="app-container">
-        <Timer />
-        <div className="board-container">
-          <div className={"board"}>
+        <Timer playing={playing} setPlaying={setPlaying} />
+        <section className="board-container">
+          <div
+            className={
+              board.length === 16
+                ? "board board__4"
+                : board.length === 25
+                ? "board board__5"
+                : "board"
+            }
+          >
             {board.map((value, index) => (
-              <div
-                key={index}
-                className={
-                  board.length === 16
-                    ? "dice dice__4x4"
-                    : board.length === 25
-                    ? "dice dice__5x5"
-                    : "dice dice__6x6"
-                }
-              >
+              <div key={index} className="dice">
                 {value}
               </div>
             ))}
           </div>
-        </div>
-        <div className="options">
-          <div className="size">
+        </section>
+        {!playing && (
+          <section className="options">
             <button onClick={resetBoard}>Shuffle Board</button>
             <select
               name="board-size-selection"
@@ -111,12 +108,12 @@ function App() {
               <option value="fiveByFiveDice">5x5</option>
               <option value="sixBySixDice">6x6</option>
             </select>
-          </div>
-          <button onClick={copyBoard}>Copy Board</button>
-          <button onClick={pasteBoard}>Enter Board</button>
-        </div>
+            <button onClick={copyBoard}>Copy Board</button>
+            <button onClick={pasteBoard}>Enter Board</button>
+          </section>
+        )}
       </div>
-    </div>
+    </main>
   );
 }
 

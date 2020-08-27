@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./Timer.css";
 import Toggle from "../Toggle/Toggle";
 
-const Timer = () => {
+const Timer = ({ playing, setPlaying }) => {
   const [timer, setTimer] = useState("04:00");
   const [timerStart, setTimerStart] = useState("04:00");
-  const [playing, setPlaying] = useState(false);
   const [intervalId, setIntervalId] = useState();
   const [isTimeUp, setIsTimeUp] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
@@ -29,7 +28,7 @@ const Timer = () => {
       setPlaying(true);
       let seconds = timer.split(":")[0] * 60 + timer.split(":")[1] * 1;
       let newIntervalId = setInterval(() => {
-        if (seconds > 0) {
+        if (seconds > 1) {
           seconds--;
           let newTimer =
             "0" +
@@ -38,6 +37,7 @@ const Timer = () => {
             (seconds % 60 > 9 ? seconds % 60 : "0" + (seconds % 60));
           setTimer(newTimer);
         } else {
+          setTimer("00:00");
           clearInterval(intervalId);
           setIsTimeUp(true);
         }
@@ -65,16 +65,13 @@ const Timer = () => {
     setDarkMode(darkModeStatus);
   };
 
-  let countdownClassName = "counddown";
-  if (isTimeUp) countdownClassName += " countdown__time-up";
-
   return (
-    <div className="timer-container">
+    <section className="timer-container">
       <button onClick={startCountdown}>{playing ? "Reset" : "Start"}</button>
       <Toggle toggleDarkMode={toggleDarkMode} />
       {playing ? (
-        <p className={countdownClassName}>
-          <b>{timer}</b>
+        <p className={isTimeUp ? "counddown countdown__time-up" : "counddown"}>
+          <strong>{timer}</strong>
         </p>
       ) : (
         <select onChange={setTimerTo} defaultValue={timerStart}>
@@ -86,7 +83,7 @@ const Timer = () => {
           <option vlaue="300">05:00</option>
         </select>
       )}
-    </div>
+    </section>
   );
 };
 
