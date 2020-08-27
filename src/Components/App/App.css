@@ -13,43 +13,29 @@ body {
 
 button {
   background-color: var(--board-color);
-  color: var(--primary-color-light);
   padding: 10px;
   border: 1px solid var(--board-color);
   border-bottom: 1px solid var(--border-color);
   border-radius: 7px;
+  color: black;
   cursor: pointer;
-  color: var(--button-text-color);
 }
 
 select {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 10px;
-  cursor: pointer;
-  text-align-last: center;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='white'><polygon points='0,0 100,0 50,50'/></svg>") no-repeat;
+  padding: 10px;
+  text-align-last: center;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='black'><polygon points='0,0 100,0 50,50'/></svg>") no-repeat;
   background-size: 12px;
   background-position: calc(100% - 10px) center;
-  background-repeat: no-repeat;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   border: 0;
   background-color: var(--board-color);
-  color: var(--primary-color-light);
   border-bottom: 1px solid var(--border-color);
   border-radius: 7px;
-  color: var(--button-text-color);
+  color: black;
+  cursor: pointer;
 }
 
 .App {

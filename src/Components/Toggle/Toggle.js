@@ -4,9 +4,10 @@ import "./Toggle.css";
 const Toggle = ({ toggleDarkMode }) => {
   return (
     <div className="toggle">
-      <label className="switch">
+      <label className="switch" htmlFor="dark-mode-toggle">
         <input
           id="dark-mode-toggle"
+          aria-label="Dark Mode Toggle"
           type="checkbox"
           onChange={toggleDarkMode}
         />
