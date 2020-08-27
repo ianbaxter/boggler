@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "40d266012c4c4357108439ba71c6ea68",
+    "revision": "fb8e9d1b364b9697a1171e64dfa5e17c",
     "url": "/boggler/index.html"
   },
   {
-    "revision": "3fcd533dac32001e5f20",
-    "url": "/boggler/static/css/main.26519475.chunk.css"
+    "revision": "65c6e54f6da99333d4f2",
+    "url": "/boggler/static/css/main.ad2b0163.chunk.css"
   },
   {
     "revision": "c7816e112c2532f0af70",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/boggler/static/js/2.81a2b972.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3fcd533dac32001e5f20",
-    "url": "/boggler/static/js/main.10786594.chunk.js"
+    "revision": "65c6e54f6da99333d4f2",
+    "url": "/boggler/static/js/main.8a960436.chunk.js"
   },
   {
     "revision": "b3dd7e2389f7289243fc",

@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/boggler/static/css/main.26519475.chunk.css",
-    "main.js": "/boggler/static/js/main.10786594.chunk.js",
-    "main.js.map": "/boggler/static/js/main.10786594.chunk.js.map",
+    "main.css": "/boggler/static/css/main.ad2b0163.chunk.css",
+    "main.js": "/boggler/static/js/main.8a960436.chunk.js",
+    "main.js.map": "/boggler/static/js/main.8a960436.chunk.js.map",
     "runtime-main.js": "/boggler/static/js/runtime-main.f9b69a58.js",
     "runtime-main.js.map": "/boggler/static/js/runtime-main.f9b69a58.js.map",
     "static/js/2.81a2b972.chunk.js": "/boggler/static/js/2.81a2b972.chunk.js",
     "static/js/2.81a2b972.chunk.js.map": "/boggler/static/js/2.81a2b972.chunk.js.map",
     "index.html": "/boggler/index.html",
-    "precache-manifest.9ffc9b10b28f85699848fcf96dd3a840.js": "/boggler/precache-manifest.9ffc9b10b28f85699848fcf96dd3a840.js",
+    "precache-manifest.0c6b622d62bde7a1749b67e852a84f1b.js": "/boggler/precache-manifest.0c6b622d62bde7a1749b67e852a84f1b.js",
     "service-worker.js": "/boggler/service-worker.js",
-    "static/css/main.26519475.chunk.css.map": "/boggler/static/css/main.26519475.chunk.css.map",
+    "static/css/main.ad2b0163.chunk.css.map": "/boggler/static/css/main.ad2b0163.chunk.css.map",
     "static/js/2.81a2b972.chunk.js.LICENSE.txt": "/boggler/static/js/2.81a2b972.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f9b69a58.js",
     "static/js/2.81a2b972.chunk.js",
-    "static/css/main.26519475.chunk.css",
-    "static/js/main.10786594.chunk.js"
+    "static/css/main.ad2b0163.chunk.css",
+    "static/js/main.8a960436.chunk.js"
   ]
 }
